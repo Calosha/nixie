@@ -28,10 +28,10 @@ def showDigit(digit, delay):
 	time.sleep(delay)
 
 def antiPoisoning():
-	for i in range(9):
+	for i in range(10):
 		GPIO.output(PINGROUP, NUMBERS[str(i)])
 		time.sleep(0.2)
-	for i in range(9,0):
+	for i in range(9, -1, -1):
 		GPIO.output(PINGROUP, NUMBERS[str(i)])
 		time.sleep(0.2)
 
