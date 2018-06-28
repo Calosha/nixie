@@ -18,10 +18,12 @@ def showDigit(digit, delay):
 	global PINGROUP
 	global NUMBERS
 	binary = NUMBERS[digit]
+	print(binary)
 	for i in range(4):
-		pin = PINGROUP[i];
+		pin = PINGROUP[i]
 		value = binary[i]
-		GPIO.output(pin, value)
+		print(value)
+		GPIO.output(pin,value)
 		time.sleep(delay)
 
 GPIO.setup(A, GPIO.OUT)
