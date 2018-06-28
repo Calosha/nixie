@@ -1,8 +1,9 @@
 import time
 import json
+import sys
 from pprint import pprint
-import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BCM)
+#import RPi.GPIO as GPIO
+#GPIO.setmode(GPIO.BCM)
 #pin setup
 #to do: move to settings.json
 A = 6 
@@ -11,68 +12,22 @@ C = 26
 D = 13
 
 PINGROUP = [D,C,B,A]
+NUMBERS = {'0':'0000','1':'0001','2':'0010','3':'0011','4':'0100','5':'0101', '6':'0110', '7':'0111', '8':'1000', '9':'1001'}
+
+def showDigit(digit, delay):
+	binary = NUMBERS[digit]
+	for i in xrange(4):
+		GPIO.output(PINGROUP[i], binary[i])
+		time.sleep(delay)
+
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
 GPIO.setup(C, GPIO.OUT)
 GPIO.setup(D, GPIO.OUT)
 while True:
-	#0
-	GPIO.output(D, 0)
-	GPIO.output(C, 0)
-	GPIO.output(B, 0)
-	GPIO.output(A, 0)
-	time.sleep(1)
-	#1
-	GPIO.output(D, 0)
-	GPIO.output(C, 0)
-	GPIO.output(B, 0)
-	GPIO.output(A, 1)
-	time.sleep(1)
-	#2
-	GPIO.output(D, 0)
-	GPIO.output(C, 0)
-	GPIO.output(B, 1)
-	GPIO.output(A, 0)
-	time.sleep(1)
-	#3
-	GPIO.output(D, 0)
-	GPIO.output(C, 0)
-	GPIO.output(B, 1)
-	GPIO.output(A, 1)
-	time.sleep(1)
-	#4
-	GPIO.output(D, 0)
-	GPIO.output(C, 1)
-	GPIO.output(B, 0)
-	GPIO.output(A, 0)
-	time.sleep(1)
-	#5
-	GPIO.output(D, 0)
-	GPIO.output(C, 1)
-	GPIO.output(B, 0)
-	GPIO.output(A, 1)
-	time.sleep(1)
-	#6
-	GPIO.output(D, 0)
-	GPIO.output(C, 1)
-	GPIO.output(B, 1)
-	GPIO.output(A, 0)
-	time.sleep(1)
-	#7
-	GPIO.output(D, 0)
-	GPIO.output(C, 1)
-	GPIO.output(B, 1)
-	GPIO.output(A, 1)
-	time.sleep(1)
-	#8
-	GPIO.output(D, 1)
-	GPIO.output(C, 0)
-	GPIO.output(B, 0)
-	GPIO.output(A, 0)
-	time.sleep(1)
-	#9
-	GPIO.output(D, 1)
-	GPIO.output(C, 0)
-	GPIO.output(B, 0)
-	GPIO.output(A, 1)
-	time.sleep(1)
+	hr = time.strftime('%I')
+	mn = time.strftime('%M')
+	for h in hr:
+		showDigit(h,1)
+	for m in mn:
+		showDigit(m,1)
