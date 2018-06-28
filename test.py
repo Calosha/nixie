@@ -42,7 +42,7 @@ while True:
 	print (hr)
 	print('min is ')
 	print(mn)
-	if mm == '00' || mm == '30':
+	if mm == '00' or mm == '30':
 		antiPoisoning()
 
 	for h in hr:
