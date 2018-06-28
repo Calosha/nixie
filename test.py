@@ -12,12 +12,19 @@ C = 26
 D = 13
 
 PINGROUP = [D,C,B,A]
-NUMBERS = {'0':'0000','1':'0001','2':'0010','3':'0011','4':'0100','5':'0101', '6':'0110', '7':'0111', '8':'1000', '9':'1001'}
+NUMBERS = ({'0': {0, 0, 0, 0},
+			'1': {0, 0, 0, 1},
+			'2': {0, 0, 1, 0},
+			'3': {0, 0, 1, 1},
+			'4': {0, 1, 0, 0},
+			'5': {0, 1, 0, 1},
+			'6': {0, 1, 1, 0},
+			'7': {0, 1, 1, 1},
+			'8': {1, 0, 0, 0},
+			'9': {1, 0, 0, 1}})
 
 def showDigit(digit, delay):
-	binarystr = list(NUMBERS[digit])
-	binaryint = map(int, binarystr)
-	GPIO.output(PINGROUP, binaryint)
+	GPIO.output(PINGROUP, NUMBERS[digit])
 	time.sleep(delay)
 
 GPIO.setup(A, GPIO.OUT)
