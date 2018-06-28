@@ -31,6 +31,9 @@ def antiPoisoning():
 	for i in range(9):
 		GPIO.output(PINGROUP, NUMBERS[str(i)])
 		time.sleep(0.2)
+	for i in range(9,0):
+		GPIO.output(PINGROUP, NUMBERS[str(i)])
+		time.sleep(0.2)
 
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
