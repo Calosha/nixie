@@ -27,17 +27,24 @@ def showDigit(digit, delay):
 	GPIO.output(PINGROUP, NUMBERS[digit])
 	time.sleep(delay)
 
+def antiPoisoning():
+	for i in range(9):
+		GPIO.output(PINGROUP, NUMBERS[i])
+
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
 GPIO.setup(C, GPIO.OUT)
 GPIO.setup(D, GPIO.OUT)
 while True:
 	hr = time.strftime('%I')
+	mn = time.strftime('%M')
 	print('hour is ')
 	print (hr)
-	mn = time.strftime('%M')
 	print('min is ')
 	print(mn)
+	if mm == '00' || mm == '30':
+		antiPoisoning()
+
 	for h in hr:
 		showDigit(h,1)
 	for m in mn:
