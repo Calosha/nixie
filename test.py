@@ -2,8 +2,8 @@ import time
 import json
 import sys
 from pprint import pprint
-#import RPi.GPIO as GPIO
-#GPIO.setmode(GPIO.BCM)
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
 #pin setup
 #to do: move to settings.json
 A = 6 
