@@ -29,7 +29,7 @@ def showDigit(digit, delay):
 
 def antiPoisoning():
 	for i in range(9):
-		GPIO.output(PINGROUP, NUMBERS[i])
+		GPIO.output(PINGROUP, NUMBERS[chr(i)])
 
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
