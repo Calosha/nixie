@@ -30,7 +30,7 @@ def showDigit(digit, delay):
 def antiPoisoning():
 	for i in range(9):
 		GPIO.output(PINGROUP, NUMBERS[str(i)])
-		time.sleep(0.002)
+		time.sleep(0.2)
 
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
@@ -43,7 +43,7 @@ while True:
 	print (hr)
 	print('min is ')
 	print(mn)
-	if mn == '07' or mn == '37':
+	if mn == '15' or mn == '45':
 		antiPoisoning()
 
 	for h in hr:
