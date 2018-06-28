@@ -15,6 +15,8 @@ PINGROUP = [D,C,B,A]
 NUMBERS = {'0':'0000','1':'0001','2':'0010','3':'0011','4':'0100','5':'0101', '6':'0110', '7':'0111', '8':'1000', '9':'1001'}
 
 def showDigit(digit, delay):
+	print('digit is')
+	print(digit)
 	binary = NUMBERS[digit]
 	for i in range(4):
 		pin = PINGROUP[i]
@@ -28,7 +30,11 @@ GPIO.setup(C, GPIO.OUT)
 GPIO.setup(D, GPIO.OUT)
 while True:
 	hr = time.strftime('%I')
+	print('hour is ')
+	print (hr)
 	mn = time.strftime('%M')
+	print('min is ')
+	print(mn)
 	for h in hr:
 		showDigit(h,1)
 	for m in mn:
