@@ -15,14 +15,11 @@ PINGROUP = [D,C,B,A]
 NUMBERS = {'0':'0000','1':'0001','2':'0010','3':'0011','4':'0100','5':'0101', '6':'0110', '7':'0111', '8':'1000', '9':'1001'}
 
 def showDigit(digit, delay):
-	print('digit is')
-	print(digit)
-	binary = NUMBERS[digit]
-	for i in range(4):
-		pin = PINGROUP[i]
-		intval = int(binary[i]) #converting string to int
-		GPIO.output(pin, intval)
-		time.sleep(delay)
+	binarystr = list(NUMBERS[digit])
+	binaryint = map(int, binarystr)
+	GPIO.output(PINGROUP, binaryint)
+	time.sleep(delay)
+	GPIO.cleanup()
 
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
