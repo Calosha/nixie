@@ -19,7 +19,6 @@ def showDigit(digit, delay):
 	binaryint = map(int, binarystr)
 	GPIO.output(PINGROUP, binaryint)
 	time.sleep(delay)
-	GPIO.cleanup()
 
 GPIO.setup(A, GPIO.OUT)
 GPIO.setup(B, GPIO.OUT)
