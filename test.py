@@ -12,16 +12,16 @@ C = 26
 D = 13
 
 PINGROUP = [D,C,B,A]
-NUMBERS = ({'0': [0, 0, 0, 0],
-			'1': [0, 0, 0, 1],
-			'2': [0, 0, 1, 0],
-			'3': [0, 0, 1, 1],
-			'4': [0, 1, 0, 0],
-			'5': [0, 1, 0, 1],
-			'6': [0, 1, 1, 0],
-			'7': [0, 1, 1, 1],
-			'8': [1, 0, 0, 0],
-			'9': [1, 0, 0, 1]})
+NUMBERS = ({'1': [0, 0, 0, 0],
+			'0': [0, 0, 0, 1],
+			'9': [0, 0, 1, 0],
+			'8': [0, 0, 1, 1],
+			'7': [0, 1, 0, 0],
+			'6': [0, 1, 0, 1],
+			'5': [0, 1, 1, 0],
+			'4': [0, 1, 1, 1],
+			'3': [1, 0, 0, 0],
+			'2': [1, 0, 0, 1]})
 
 def showDigit(digit, delay):
 	GPIO.output(PINGROUP, NUMBERS[digit])
@@ -40,19 +40,16 @@ GPIO.setup(B, GPIO.OUT)
 GPIO.setup(C, GPIO.OUT)
 GPIO.setup(D, GPIO.OUT)
 while True:
-	#showDigit('7',10)
-	showDigit('0',10)
-	#showDigit('1',10)
-	# hr = time.strftime('%I')
-	# mn = time.strftime('%M')
-	# print('hour is ')
-	# print (hr)
-	# print('min is ')
-	# print(mn)
-	# if mn == '30' or mn == '00':
-	# 	antiPoisoning()
+	hr = time.strftime('%I')
+	mn = time.strftime('%M')
+	print('hour is ')
+	print (hr)
+	print('min is ')
+	print(mn)
+	if mn == '30' or mn == '00':
+		antiPoisoning()
 
-	# for h in hr:
-	# 	showDigit(h,1)
-	# for m in mn:
-	# 	showDigit(m,1)
+	for h in hr:
+		showDigit(h,1)
+	for m in mn:
+		showDigit(m,1)
