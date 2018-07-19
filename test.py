@@ -1,4 +1,4 @@
-uimport time
+import time
 import json
 import sys
 from pprint import pprint
