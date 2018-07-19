@@ -1,4 +1,4 @@
-import time
+uimport time
 import json
 import sys
 from pprint import pprint
@@ -40,16 +40,17 @@ GPIO.setup(B, GPIO.OUT)
 GPIO.setup(C, GPIO.OUT)
 GPIO.setup(D, GPIO.OUT)
 while True:
-	hr = time.strftime('%I')
-	mn = time.strftime('%M')
-	print('hour is ')
-	print (hr)
-	print('min is ')
-	print(mn)
-	if mn == '30' or mn == '00':
-		antiPoisoning()
+	showDigit('7',10)
+	# hr = time.strftime('%I')
+	# mn = time.strftime('%M')
+	# print('hour is ')
+	# print (hr)
+	# print('min is ')
+	# print(mn)
+	# if mn == '30' or mn == '00':
+	# 	antiPoisoning()
 
-	for h in hr:
-		showDigit(h,1)
-	for m in mn:
-		showDigit(m,1)
+	# for h in hr:
+	# 	showDigit(h,1)
+	# for m in mn:
+	# 	showDigit(m,1)
