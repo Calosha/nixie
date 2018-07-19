@@ -41,6 +41,8 @@ GPIO.setup(C, GPIO.OUT)
 GPIO.setup(D, GPIO.OUT)
 while True:
 	showDigit('7',10)
+	showDigit('0',10)
+	showDigit('1',10)
 	# hr = time.strftime('%I')
 	# mn = time.strftime('%M')
 	# print('hour is ')
