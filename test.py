@@ -100,4 +100,4 @@ while True:
 	if mn == '30' or mn == '00':
 		antiPoisoning()
 	time.sleep(60)
-    	showTime()
+    showTime()
