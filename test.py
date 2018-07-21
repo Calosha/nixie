@@ -51,8 +51,8 @@ def showDigit(digit, pingroup):
 	GPIO.output(pingroup, NUMBERS[digit])
 
 def showTime(hours, minutes):
-	print(hours)
-	print(minutes)
+	print(hours[0])
+	print(hours[1])
 	showDigit(hours[0], HRM)
 	showDigit(hours[1], HRL)
 	showDigit(minutes[0], MNM)
