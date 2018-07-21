@@ -53,8 +53,8 @@ def showDigit(digit, pingroup):
 def showTime(hours, minutes):
 	print(hours[0])
 	print(hours[1])
-	showDigit(hours[0], HRM)
-	showDigit(hours[1], HRL)
+	showDigit('2', HRM)
+	showDigit('3', HRL)
 	showDigit(minutes[0], MNM)
 	showDigit(minutes[1], MNL)
 
