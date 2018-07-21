@@ -52,12 +52,12 @@ def showDigit(digit, pingroup):
 	time.sleep(delay)
 
 def showTime(hours, minutes):
+	print(hours)
+	print(minutes)
 	showDigit(hours[0], HRM)
 	showDigit(hours[1], HRL)
 	showDigit(minutes[0], MNM)
 	showDigit(minutes[1], MNL)
-
-
 
 def antiPoisoning():
 	for i in range(10):
@@ -99,5 +99,5 @@ while True:
 	print(mn)
 	if mn == '30' or mn == '00':
 		antiPoisoning()
-	time.sleep(60)
+	time.sleep(1)
 	showTime()
