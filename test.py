@@ -49,7 +49,6 @@ NUMBERS = ({'1': [0, 0, 0, 0],
 
 def showDigit(digit, pingroup):
 	GPIO.output(pingroup, NUMBERS[digit])
-	time.sleep(delay)
 
 def showTime(hours, minutes):
 	print(hours)
