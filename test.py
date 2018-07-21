@@ -14,7 +14,7 @@ C = 26
 D = 13
 
 # Hours least significant
-A1 = 12 
+A1 = 12
 B1 = 16
 C1 = 20
 D1 = 21
@@ -100,4 +100,4 @@ while True:
 	if mn == '30' or mn == '00':
 		antiPoisoning()
 	time.sleep(60)
-    showTime()
+	showTime()
